@@ -68,7 +68,7 @@ public class UserController {
         //If login() method returns true, successful login, direct to the method mapped with request of type '/images'
         //If login() method returns false, unsuccessful login, redirect to the same login page
     	if(userService.login(user))
-    		return "/images";
+    		return "redirect:/images";
     	
     	return "users/login";
     }
