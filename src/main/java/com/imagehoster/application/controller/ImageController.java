@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.imagehoster.application.HardCodedImage;
@@ -37,7 +38,7 @@ public class ImageController {
 	    //The image object is added to the model and 'images/image.html' file is returned
 	  //Receive the dynamic variable in the URL '/images/{title}' in a string variable named 'title' and the Model type object named 'model'
 	    @RequestMapping("/images/{title}")
-	    public String showImage(Model model,String title) {
+	    public String showImage(Model model,@PathVariable("title") String title) {
 	    	
 	        Date date = new Date();
 	        Image image = null;
